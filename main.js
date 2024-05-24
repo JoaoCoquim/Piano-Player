@@ -5,26 +5,37 @@ keys.forEach(function(key){
   notes.push(document.getElementById(key));
 })
 
-const keyPlay = (event) => {
-  if(event.target.className === 'key' || event.target.className === 'black-key'){
-    event.target.style.backgroundColor = 'red';
-  }
-  const audioElement = event.target.querySelector('audio');
-  if(audioElement){
-    audioElement.currentTime = 0;
-    audioElement.play();
+const handleKeyPress = (event) => {
+  const targetKey = event.target.closest('.key');
+  const targetBlackKey = event.target.closest('.black-key');
+
+  // If the event target is a key or a black key
+  if (targetKey || targetBlackKey) {
+    const keyElement = targetKey || targetBlackKey;
+    keyElement.style.backgroundColor = 'red';
+
+    const audioElement = keyElement.querySelector('audio');
+    if (audioElement) {
+      audioElement.currentTime = 0;
+      audioElement.play();
+    }
   }
 }
 
-const keyReturn = (event) => {
-  if(event.target.className === 'key' || event.target.className === 'black-key'){
-    event.target.style.backgroundColor = '';
+const handleKeyRelease = (event) => {
+  const targetKey = event.target.closest('.key');
+  const targetBlackKey = event.target.closest('.black-key');
+
+  // If the event target is a key or a black key
+  if (event.target.closest('.key') || event.target.closest('.black-key')) {
+    const keyElement = targetKey || targetBlackKey;
+    keyElement.style.backgroundColor = '';
   }
 }
 
 const keyStroke = (note) => {
-  note.addEventListener('mousedown', keyPlay);
-  note.addEventListener('mouseup', keyReturn);
+  note.addEventListener('mousedown', handleKeyPress);
+  note.addEventListener('mouseup', handleKeyRelease);
 }
 
 // loop that runs the array elements through the function
