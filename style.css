@@ -18,9 +18,9 @@ html, body{
   #demo{
     text-align: center;
     font-size: 18px;
-    margin-top: 15px;
+    margin-top: 25px;
     color: #141c3a;
-    letter-spacing: 1px;
+    letter-spacing: 5px;
     font-style: italic;
   }
   .piano{
@@ -37,7 +37,7 @@ html, body{
     height: 200px;
     display: inline-block;
     border: solid #141c3a 2px;
-    box-shadow: 2px 5px;
+    box-shadow: 3px 5px;
     background-color: white;
     color: #141c3a;
   }
@@ -108,7 +108,7 @@ html, body{
     margin-top: 30px;
     margin-left: 10px;
     border: none;
-    background-color: #ffc63f;
+    background-color: #fd4d3f;
     color: #141c3a;
     letter-spacing: 1px;
     cursor: pointer;

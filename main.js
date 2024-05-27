@@ -1,11 +1,30 @@
 // store the piano keys
-const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
-const notes = [];
-keys.forEach(function(key){
-  notes.push(document.getElementById(key));
-})
+const keyMap = {
+  'a': 'c-key',
+  'w': 'c-sharp-key',
+  's': 'd-key',
+  'e': 'd-sharp-key',
+  'd': 'e-key',
+  'f': 'f-key',
+  't': 'f-sharp-key',
+  'g': 'g-key',
+  'y': 'g-sharp-key',
+  'h': 'a-key',
+  'u': 'a-sharp-key',
+  'j': 'b-key',
+  'k': 'high-c-key'
+};
+// Extract the piano key ids from the keyMap
+const notes = Object.values(keyMap).map(key => document.getElementById(key));
 
-const handleKeyPress = (event) => {
+const play = (audioElement) => {
+  if (audioElement) {
+    audioElement.currentTime = 0;
+    audioElement.play();
+  }
+}
+
+const handleMousePress = (event) => {
   const targetKey = event.target.closest('.key');
   const targetBlackKey = event.target.closest('.black-key');
 
@@ -15,14 +34,11 @@ const handleKeyPress = (event) => {
     keyElement.style.backgroundColor = 'red';
 
     const audioElement = keyElement.querySelector('audio');
-    if (audioElement) {
-      audioElement.currentTime = 0;
-      audioElement.play();
-    }
+    play(audioElement);
   }
 }
 
-const handleKeyRelease = (event) => {
+const handleMouseRelease = (event) => {
   const targetKey = event.target.closest('.key');
   const targetBlackKey = event.target.closest('.black-key');
 
@@ -33,13 +49,38 @@ const handleKeyRelease = (event) => {
   }
 }
 
+const handleKeyboardPress = (event) => {
+  const pianoKeyId = keyMap[event.key.toLowerCase()];
+  const pianoKey = document.getElementById(pianoKeyId);
+
+  if(pianoKey){
+    pianoKey.style.backgroundColor = 'red';
+    const audioElement  = pianoKey.querySelector('audio');
+    play(audioElement);
+  }
+}
+
+let handleKeyboardRelease = (event) => {
+  const pianoKeyId = keyMap[event.key.toLowerCase()];
+  const pianoKey = document.getElementById(pianoKeyId);
+
+  if(pianoKey){
+    pianoKey.style.backgroundColor = '';
+  }
+}
+
+// mouse event listeners
 const keyStroke = (note) => {
-  note.addEventListener('mousedown', handleKeyPress);
-  note.addEventListener('mouseup', handleKeyRelease);
+  note.addEventListener('mousedown', handleMousePress);
+  note.addEventListener('mouseup', handleMouseRelease);
 }
 
 // loop that runs the array elements through the function
 notes.forEach(note => keyStroke(note));
+
+// keyboard event listeners
+document.addEventListener('keydown', handleKeyboardPress);
+document.addEventListener('keyup', handleKeyboardRelease);
 
 // store the buttons that progress the user through the lyrics
 let nextOne = document.getElementById('first-next-line');
