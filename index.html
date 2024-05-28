@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
+  <title>Piano Player</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
 <body>
@@ -11,23 +13,23 @@
   <p id='demo'>Follow the song below to play  the piano.</p>
   <section class="piano">
     <section id='c-key' class="key">
-      <section class='keynote'>C</section>
+      <section class='keynote'>A</section>
       <audio src="notes/C.wav"></audio>
     </section>
     <section id='c-sharp-key' class="black-key">
-      <section class='black-keynote'>C#</section>
+      <section class='black-keynote'>W</section>
       <audio src="notes/C-sharp.wav"></audio>
     </section>
     <section id='d-key' class="key">
-      <section class='keynote'>D</section>
+      <section class='keynote'>S</section>
       <audio src="notes/D.wav"></audio>
     </section>
     <section id='d-sharp-key' class="black-key">
-      <section class='black-keynote'>D#</section>
+      <section class='black-keynote'>E</section>
       <audio src="notes/D-sharp.wav"></audio>
     </section>
     <section id='e-key' class="key">
-      <section class='keynote'>E</section>
+      <section class='keynote'>D</section>
       <audio src="notes/E.wav"></audio>
     </section>
     <section id='f-key' class="key">
@@ -35,7 +37,7 @@
       <audio src="notes/F.wav"></audio>
     </section>
     <section id='f-sharp-key' class="black-key">
-      <section class='black-keynote'>F#</section>
+      <section class='black-keynote'>T</section>
       <audio src="notes/F-sharp.wav"></audio>
     </section>
     <section id='g-key' class="key">
@@ -43,23 +45,23 @@
       <audio src="notes/G.wav"></audio>
     </section>
     <section id='g-sharp-key' class="black-key">
-      <section class='black-keynote'>G#</section>
+      <section class='black-keynote'>Y</section>
       <audio src="notes/G-sharp.wav"></audio>
     </section>
     <section id='a-key' class="key">
-      <section class='keynote'>A</section>
+      <section class='keynote'>H</section>
       <audio src="notes/A.wav"></audio>
     </section>
     <section id='a-sharp-key' class="black-key">
-      <section class='black-keynote'>A#</section>
+      <section class='black-keynote'>U</section>
       <audio src="notes/A-sharp.wav"></audio>
     </section>
     <section id='b-key' class="key">
-      <section class='keynote'>B</section>
+      <section class='keynote'>J</section>
       <audio src="notes/B.wav"></audio>
     </section>
     <section id='high-c-key' class="key">
-      <div class='keynote'>C</div>
+      <div class='keynote'>K</div>
       <audio src="notes/HighC.wav"></audio>
     </section>
   </section>
@@ -67,19 +69,19 @@
   <section id='lyrics'>
     <section id='column-one'>
       <section id="word-one">HAP-</section>
-      <section id="letter-note-one">C</section>
+      <section id="letter-note-one">A</section>
     </section>
     <section id='column-two'>
       <section id="word-two">PY</section>
-      <section id="letter-note-two">C</section>
+      <section id="letter-note-two">A</section>
     </section>
     <section id='column-three'>
       <section id="word-three">BIRTH-</section>
-      <section id="letter-note-three">D</section>
+      <section id="letter-note-three">S</section>
     </section>
     <section id='column-four'>
       <section id="word-four">DAY</section>
-      <section id="letter-note-four">C</section>
+      <section id="letter-note-four">A</section>
     </section>
     <section id='column-five'>
       <section id="word-five">TO</section>
@@ -87,17 +89,17 @@
     </section>
     <section id='column-six'>
       <section id="word-six">YOU</section>
-      <section id="letter-note-six">E</section>
+      <section id="letter-note-six">D</section>
     </section>
     <section id='column-optional' class='column-optional'>
       <section id="word-optional">END</section>
-      <section id="letter-note-optional">D</section>
+      <section id="letter-note-optional">S</section>
     </section>
 
-    <button id="first-next-line">Line 2</button>
-    <button id="second-next-line">Line 3</button>
-    <button id="third-next-line">Line 4</button>
-    <button id="fourth-next-line">Reset</button>
+      <button id="line-2-button">Line 2</button>
+      <button id="line-3-button">Line 3</button>
+      <button id="line-4-button">Line 4</button>
+      <button id="reset-button">Reset</button>
   </section>
 
   <script  src="main.js"></script>

@@ -18,38 +18,41 @@ html, body{
   #demo{
     text-align: center;
     font-size: 18px;
-    margin-top: 25px;
+    margin-top: px;
     color: #141c3a;
     letter-spacing: 5px;
     font-style: italic;
   }
   .piano{
-    width: 305px;
-    height: 210px;
+    width: 576px;
+    height: 232px;
     display: block;
     margin: 0 auto;
-    background-color: #fd4d3f;
+    background-color: black;
     margin-top: 30px;
     cursor: pointer;
+    padding: 1%;
+    border-radius: 8px;
   }
   .key{
-    width: 30px;
-    height: 200px;
+    width: 70px;
+    height: 230px;
     display: inline-block;
-    border: solid #141c3a 2px;
-    box-shadow: 3px 5px;
-    background-color: white;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background: linear-gradient(#fff 96%, #eee 4%);
     color: #141c3a;
+    margin: 0 -2px;
   }
   .black-key{
-    width: 25px;
-    height: 100px;
+    width: 50px;
+    height: 150px;
     display: inline-block;
-    background-color: #141c3a;
+    background: linear-gradient(#333, #000);
     color: white;
     position: absolute;
-    margin-left: -12px;
-    padding: 0px;
+    border-radius: 0 0 5px 5px;
+    margin: 0 -25px;
   }
   .keynote{
     width: 20px;
@@ -57,7 +60,7 @@ html, body{
     text-align: center;
     display: block;
     margin: 0 auto;
-    margin-top: 175px;
+    margin-top: 190px;
     color: #141c3a;
   }
   .black-keynote{
@@ -66,10 +69,10 @@ html, body{
     text-align: center;
     display: block;
     margin: 0 auto;
-    margin-top: 75px;
+    margin-top: 115px;
   }
   #lyrics{
-    width: 400px;
+    width: 500px;
     height: 240px;
     display: block;
     margin: 0 auto;
@@ -100,15 +103,17 @@ html, body{
     margin-top: 15px;
     margin-left: 35px;
   }
-  #first-next-line, #second-next-line, #third-next-line, #fourth-next-line{
+  #line-2-button, #line-3-button, #line-4-button, #reset-button{
     width: 80px;
-    height: 40px;
-    font-size: 16px;
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
     position: absolute;
-    margin-top: 30px;
-    margin-left: 10px;
-    border: none;
-    background-color: #fd4d3f;
+    margin-top: 25px;
+    margin-left: 15px;
+    border-radius: 5px;
+    background: rgba(6, 247, 126, 0.637);
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.8);
     color: #141c3a;
     letter-spacing: 1px;
     cursor: pointer;
