@@ -1,120 +1,155 @@
-html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: linear-gradient(white, rgba(0, 0, 0, 0.5));
-  }
-  .title{
-    font-size: 36px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    padding: 0;
-    color: #141c3a;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-  }
-  #demo{
-    text-align: center;
-    font-size: 18px;
-    margin-top: px;
-    color: #141c3a;
-    letter-spacing: 5px;
-    font-style: italic;
-  }
-  .piano{
-    width: 576px;
-    height: 232px;
-    display: block;
-    margin: 0 auto;
-    background-color: black;
-    margin-top: 30px;
-    cursor: pointer;
-    padding: 1%;
-    border-radius: 8px;
-  }
-  .key{
-    width: 70px;
-    height: 230px;
-    display: inline-block;
-    border: 1px solid #000;
-    border-radius: 8px;
-    background: linear-gradient(#fff 96%, #eee 4%);
-    color: #141c3a;
-    margin: 0 -2px;
-  }
-  .black-key{
-    width: 50px;
-    height: 150px;
-    display: inline-block;
-    background: linear-gradient(#333, #000);
-    color: white;
-    position: absolute;
-    border-radius: 0 0 5px 5px;
-    margin: 0 -25px;
-  }
-  .keynote{
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    margin-top: 190px;
-    color: #141c3a;
-  }
-  .black-keynote{
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    display: block;
-    margin: 0 auto;
-    margin-top: 115px;
-  }
-  #lyrics{
-    width: 500px;
-    height: 240px;
-    display: block;
-    margin: 0 auto;
-    padding-left: 20px;
-    margin-top: 50px;
-  }
-  #column-one, #column-two, #column-three, #column-four, #column-five, #column-six, #column-optional{
-    width: 90px;
-    display: inline-block;
-    text-align: center;
-    margin-top: 30px;
-  }
-  #column-optional{
-    display: none;
-  }
-  #word-one, #word-two, #word-three, #word-four, #word-five, #word-six, #word-optional{
-    background-color: white;
-    width: 90px;
-    height: 25px;
-    padding-top: 10px;
-    letter-spacing: 5px;
-    color: #141c3a;
-  }
-  #letter-note-one, #letter-note-two, #letter-note-three, #letter-note-four, #letter-note-five, #letter-note-six, #letter-note-optional{
-    color: white;
-    width: 25px;
-    height: 25px;
-    margin-top: 15px;
-    margin-left: 35px;
-  }
-  #line-2-button, #line-3-button, #line-4-button, #reset-button{
-    width: 80px;
-    height: 45px;
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    margin-top: 25px;
-    margin-left: 15px;
-    border-radius: 5px;
-    background: rgba(6, 247, 126, 0.637);
-    box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.8);
-    color: #141c3a;
-    letter-spacing: 1px;
-    cursor: pointer;
-  }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: linear-gradient(white, rgba(0, 0, 0, 0.5));
+}
+
+.title {
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+  color: #141c3a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#demo {
+  text-align: center;
+  font-size: 18px;
+  margin-top: px;
+  color: #141c3a;
+  letter-spacing: 5px;
+  font-style: italic;
+}
+
+.piano {
+  width: 576px;
+  height: 232px;
+  display: block;
+  margin: 0 auto;
+  background-color: black;
+  margin-top: 30px;
+  cursor: pointer;
+  padding: 1%;
+  border-radius: 8px;
+}
+
+.key {
+  width: 70px;
+  height: 230px;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background: linear-gradient(#fff 96%, #eee 4%);
+  color: #141c3a;
+  margin: 0 -2px;
+}
+
+.black-key {
+  width: 50px;
+  height: 150px;
+  display: inline-block;
+  background: linear-gradient(#333, #000);
+  color: white;
+  position: absolute;
+  border-radius: 0 0 5px 5px;
+  margin: 0 -25px;
+}
+
+.keynote {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 190px;
+  color: #141c3a;
+}
+
+.black-keynote {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 115px;
+}
+
+#lyrics {
+  width: 500px;
+  height: 240px;
+  display: block;
+  margin: 0 auto;
+  padding-left: 20px;
+  margin-top: 50px;
+}
+
+#column-one,
+#column-two,
+#column-three,
+#column-four,
+#column-five,
+#column-six,
+#column-optional {
+  width: 90px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#column-optional {
+  display: none;
+}
+
+#word-one,
+#word-two,
+#word-three,
+#word-four,
+#word-five,
+#word-six,
+#word-optional {
+  background-color: white;
+  width: 90px;
+  height: 25px;
+  padding-top: 10px;
+  letter-spacing: 5px;
+  color: #141c3a;
+}
+
+#letter-note-one,
+#letter-note-two,
+#letter-note-three,
+#letter-note-four,
+#letter-note-five,
+#letter-note-six,
+#letter-note-optional {
+  color: white;
+  width: 25px;
+  height: 25px;
+  margin-top: 15px;
+  margin-left: 35px;
+}
+
+#line-2-button,
+#line-3-button,
+#line-4-button,
+#reset-button {
+  width: 80px;
+  height: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: rgba(6, 247, 126, 0.637);
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+  color: #141c3a;
+  letter-spacing: 1px;
+  cursor: pointer;
+}

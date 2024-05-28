@@ -14,6 +14,7 @@ const keyMap = {
   'j': 'b-key',
   'k': 'high-c-key'
 };
+
 // Extract the piano key ids from the keyMap
 const notes = Object.values(keyMap).map(key => document.getElementById(key));
 
@@ -24,40 +25,47 @@ const play = (audioElement) => {
   }
 }
 
+// update background color of lyrics based on the pressed piano key
 const updateLyricsColor = (keyElement) => {
   const pianoKey = keyElement.querySelector('.keynote, .black-keynote').innerHTML;
 
-  if(pianoKey === document.getElementById('letter-note-optional').innerHTML && document.getElementById('word-six').style.background === 'green'){
+  if (pianoKey === document.getElementById('letter-note-optional').innerHTML && document.getElementById('word-six').style.background === 'green') {
     document.getElementById('word-optional').style.background = 'green';
-
-    if(line4button.hidden === false){
+    if (line4button.hidden === false) {
       line4button.onclick();
       resetLyricsColor();
     }
-
-  } else if(pianoKey === document.getElementById('letter-note-six').innerHTML && document.getElementById('word-five').style.background === 'green'){
+  } else if (pianoKey === document.getElementById('letter-note-six').innerHTML && document.getElementById('word-five').style.background === 'green') {
     document.getElementById('word-six').style.background = 'green';
-    
-    if(line3button.hidden === false){
+    if (line3button.hidden === false) {
       line3button.onclick();
       resetLyricsColor();
-    } else if(line2button.hidden === false){
+    } else if (line2button.hidden === false) {
       line2button.onclick();
       resetLyricsColor();
     }
-
-  } else if(pianoKey === document.getElementById('letter-note-five').innerHTML && document.getElementById('word-four').style.background === 'green'){
+  } else if (pianoKey === document.getElementById('letter-note-five').innerHTML && document.getElementById('word-four').style.background === 'green') {
     document.getElementById('word-five').style.background = 'green';
-  } else if(pianoKey === document.getElementById('letter-note-four').innerHTML && document.getElementById('word-three').style.background === 'green'){
+  } else if (pianoKey === document.getElementById('letter-note-four').innerHTML && document.getElementById('word-three').style.background === 'green') {
     document.getElementById('word-four').style.background = 'green';
-  } else if(pianoKey === document.getElementById('letter-note-three').innerHTML && document.getElementById('word-two').style.background === 'green'){
+  } else if (pianoKey === document.getElementById('letter-note-three').innerHTML && document.getElementById('word-two').style.background === 'green') {
     document.getElementById('word-three').style.background = 'green';
-  } else if(pianoKey === document.getElementById('letter-note-two').innerHTML && document.getElementById('word-one').style.background === 'green'){
+  } else if (pianoKey === document.getElementById('letter-note-two').innerHTML && document.getElementById('word-one').style.background === 'green') {
     document.getElementById('word-two').style.background = 'green';
-  } else if(pianoKey === document.getElementById('letter-note-one').innerHTML && document.getElementById('word-one').style.background === ''){
+  } else if (pianoKey === document.getElementById('letter-note-one').innerHTML && document.getElementById('word-one').style.background === '') {
     document.getElementById('word-one').style.background = 'green';
   }
+}
 
+// reset background color of all lyrics
+function resetLyricsColor() {
+  document.getElementById('word-one').style.background = '';
+  document.getElementById('word-two').style.background = '';
+  document.getElementById('word-three').style.background = '';
+  document.getElementById('word-four').style.background = '';
+  document.getElementById('word-five').style.background = '';
+  document.getElementById('word-six').style.background = '';
+  document.getElementById('word-optional').style.background = '';
 }
 
 const handleMousePress = (event) => {
@@ -70,7 +78,7 @@ const handleMousePress = (event) => {
     keyElement.style.background = '#d8d8d8';
 
     updateLyricsColor(keyElement);
-  
+
     const audioElement = keyElement.querySelector('audio');
     play(audioElement);
   }
@@ -93,9 +101,9 @@ const handleKeyboardPress = (event) => {
 
   updateLyricsColor(pianoKey);
 
-  if(pianoKey){
+  if (pianoKey) {
     pianoKey.style.background = '#d8d8d8';
-    const audioElement  = pianoKey.querySelector('audio');
+    const audioElement = pianoKey.querySelector('audio');
     play(audioElement);
   }
 }
@@ -104,7 +112,7 @@ let handleKeyboardRelease = (event) => {
   const pianoKeyId = keyMap[event.key.toLowerCase()];
   const pianoKey = document.getElementById(pianoKeyId);
 
-  if(pianoKey){
+  if (pianoKey) {
     pianoKey.style.background = '';
   }
 }
@@ -133,17 +141,6 @@ let lastLyric = document.getElementById('column-optional');
 line3button.hidden = true;
 line4button.hidden = true;
 resetButton.hidden = true;
-
-// reset all lyrics' colors
-function resetLyricsColor(){
-  document.getElementById('word-one').style.background = '';
-  document.getElementById('word-two').style.background = '';
-  document.getElementById('word-three').style.background = '';
-  document.getElementById('word-four').style.background = '';
-  document.getElementById('word-five').style.background = '';
-  document.getElementById('word-six').style.background = '';
-  document.getElementById('word-optional').style.background = '';
-}
 
 // event handler property and function for the first progress button
 line2button.onclick = function() {
