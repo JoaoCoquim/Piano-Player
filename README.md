@@ -1,8 +1,8 @@
 # Piano Player
 
-## Project Overview
-
 Welcome to my Piano Player project, a web-based interactive piano application. It allows users to play piano notes by clicking the keys on the screen or by pressing corresponding keys on their keyboard. Additionally, it guides users through playing the "Happy Birthday" song with visual cues.
+
+![piano_player](https://github.com/JoaoCoquim/Piano-Player/assets/113604962/f7e1cd03-3db5-4f80-b367-29658916cfc7)
 
 ## Table of Contents
 
